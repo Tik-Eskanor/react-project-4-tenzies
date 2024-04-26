@@ -12,7 +12,8 @@ export default function App()
   React.useEffect(()=>
   {
     const allHeld = diceArray.every((dice)=>{return dice.isHeld})
-    const allSameValue = diceArray.every((dice)=>{return dice.value})
+    const firstValue = diceArray[0].value
+    const allSameValue = diceArray.every((dice)=>{return dice.value === firstValue})
 
     if(allHeld && allSameValue)
     {
@@ -96,15 +97,21 @@ export default function App()
    }
 
 
-   return(
+  return(
      <main>
-       {tenzies && <Confetti/>}
-       <div className="container">
-          {diceElements}
-       </div>
-      <div className="btn-container">
-       <button className="roll" onClick={roll}>{tenzies ? "New game": "Roll"}</button>
-      </div>
+      <section className='content'>
+        {tenzies && <Confetti/>}
+        <div className='heading'>
+          <h2>Tenzies</h2>
+          <p>Roll untill all dice are the same. Click each die to freez it at it's current state</p>
+        </div>
+        <div className="container">
+            {diceElements}
+        </div>
+        <div className="btn-container">
+        <button className="roll" onClick={roll}>{tenzies ? "New game": "Roll"}</button>
+        </div>
+      </section>
      </main>
    )
 }

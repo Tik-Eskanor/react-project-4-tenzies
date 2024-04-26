@@ -13,15 +13,26 @@ body
 
 main
 {
+  display: flex;
+  height: 100vh;
+}
+.content
+{
     background-color: whitesmoke;
     height: 500px;
-    width: 500px;
+    flex-basis: 40%;
     border-radius: 5px;
-    margin: 20px auto;
+    margin:auto;
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.heading
+{
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
 }
 .container
 {
@@ -69,4 +80,43 @@ main
     color:white;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media (max-width:700px) 
+{
+.content
+{
+    flex-basis: 80%;
+}
+.die
+{
+    flex-basis: 17%;
+    height: 45px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.322);
+    display: flex;
+    margin: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+}
+@media (max-width:600px) 
+{
+.content
+{
+    flex-basis: 90%;
+}
+.die
+{
+    flex-basis: 17%;
+    height: 45px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.322);
+    display: flex;
+    margin: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
 }
